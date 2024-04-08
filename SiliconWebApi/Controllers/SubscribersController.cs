@@ -39,10 +39,10 @@ namespace SiliconWebApi.Controllers
             return BadRequest();
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(Subscriber dto)
+        [HttpDelete("{email}")]
+        public async Task<IActionResult> Delete(string email)
         {
-            var subscriber = await _context.Subscribers.FirstOrDefaultAsync(x => x.Email == dto.Email);
+            var subscriber = await _context.Subscribers.FirstOrDefaultAsync(x => x.Email == email);
             if (subscriber != null)
             {
                 _context.Subscribers.Remove(subscriber);

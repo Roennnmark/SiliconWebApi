@@ -23,32 +23,32 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Infrastructure.Entities.CourseEntity", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Author")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DiscountPrice")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("DiscountPrice")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("Hours")
+                    b.Property<int>("Hours")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsBestseller")
                         .HasColumnType("bit");
 
-                    b.Property<string>("LikesInNumbers")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("LikesInNumbers")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("LikesInProcent")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("LikesInProcent")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("Price")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("OriginalPRice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Title")
                         .IsRequired()
